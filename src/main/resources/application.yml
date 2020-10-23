@@ -1,0 +1,68 @@
+endpoints:
+    info:
+        enabled: true
+        id: info
+        sensitive: false
+info:
+    app:
+        name: Skel API
+management:
+    context-path: /actuator
+    port: 9988
+    security:
+        enabled: false
+server:
+    contextPath: /
+    port: 9443
+    session-timeout: 1800
+    tomcat:
+        compressableMimeTypes: application/json,application/csv,application/xml
+        compression: 'on'
+
+spring:
+    datasource:
+        driver-class-name: org.h2.Driver
+        hikari:
+            data-source-properties:
+                cachePrepStmts: true
+                prepStmtCacheSize: 250
+                prepStmtCacheSqlLimit: 2048
+                useServerPrepStmts: true
+        password: ''
+        url: 'jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;IGNORECASE=TRUE '
+        username: SA
+    h2:
+        console:
+            enabled: true
+    jersey:
+        applicationPath: /app
+
+    jpa:
+        open-in-view: true
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        generate-ddl: true
+        show-sql: false
+        hibernate:
+            ddl-auto: create-only
+            use-new-id-generator-mappings: false
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+                format_sql: false
+                generate_statistics: false
+                use_sql_comments: false
+                discriminator:
+                    ignore_explicit_for_joined: true
+                jdbc:
+                    lob:
+                        non_contextual_creation: true
+                    time_zone: UTC
+            javax:
+                persistence:
+                    validation:
+                        mode: none
+
+app:
+    secretKey: securesecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecure
