@@ -49,7 +49,7 @@ TOKEN=$(curl -H "Content-Type: application/json" \
  `
  curl -H "Content-Type: application/json" \
       -H "Authorization: ${TOKEN}"  \
-           -X POST \
+           -X POST \har 
            -d '{"mTitle":"Java steg för steg","mAuthor":"Jan Skansholm","mISBN":"978-3-16-148412-4"}' \
            http://localhost:9443/app/api/1.0/book
  `

@@ -29,10 +29,6 @@ public class Reader extends AbstractEntity{
     @JsonView(View.UserView.Internal.class)
     private String mRole;
 
-//    @JsonView(View.UserView.External.class)
-//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,
-//        orphanRemoval = true, mappedBy = "mReader")
-//    private Set<Review> mReviews = new HashSet<>();
 
     public Reader() {
     }
